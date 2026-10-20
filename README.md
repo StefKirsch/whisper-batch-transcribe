@@ -6,10 +6,9 @@ Transcribe recordings locally with Whisper. Each recording gets a `.txt` file be
 
 Download this repository (**Code → Download ZIP**, then extract it), or clone it.
 
-Open a terminal and follow the steps below:
+Open a terminal and follow the steps below. On Windows we recommend Windows Powershell that should already be in the list of installed programs on your computer.
 
-1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if needed.
-   Python does not need to be installed first.
+1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) by pasting the respective code in the terminal and confirming with `Enter`:
 
    **Windows (PowerShell):**
 
@@ -25,11 +24,19 @@ Open a terminal and follow the steps below:
 
    Close and reopen your terminal after installing uv.
 
-2. Install [FFmpeg](https://ffmpeg.org/download.html) if needed:
+2. Install [FFmpeg](https://ffmpeg.org/download.html) by pasting the respective code below in your terminal:
 
-   - Windows: `winget install --id Gyan.FFmpeg --exact`
-   - macOS (with [Homebrew](https://brew.sh)): `brew install ffmpeg`
-   - Ubuntu / Debian: `sudo apt update && sudo apt install ffmpeg`
+   - Windows:
+
+      ```powershell
+      winget install --id Gyan.FFmpeg --exact`
+      ```
+
+   - macOS (with [Homebrew](https://brew.sh)):
+
+      ```sh
+      brew install ffmpeg
+      ```
 
    *Reopen* your terminal, then check that `ffmpeg -version` works.
 
