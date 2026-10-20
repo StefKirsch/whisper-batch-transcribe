@@ -1,0 +1,5 @@
+*.txt
+*.m4a
+.venv/
+__pycache__/
+*.py[cod]
