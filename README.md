@@ -29,7 +29,7 @@ Open a terminal and follow the steps below. On Windows we recommend Windows Powe
    - Windows:
 
       ```powershell
-      winget install --id Gyan.FFmpeg --exact`
+      winget install --id Gyan.FFmpeg --exact
       ```
 
    - macOS (with [Homebrew](https://brew.sh)):
