@@ -1,4 +1,4 @@
-# Transcribe interviews
+# Audio Transcription in Batch
 
 Transcribe recordings locally with Whisper. Each recording gets a `.txt` file beside it. Subfolders are included. Recordings with an existing `.txt` file are treated as already transcribed and are skipped.
 
