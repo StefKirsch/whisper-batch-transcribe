@@ -24,23 +24,7 @@ Open a terminal and follow the steps below. On Windows we recommend Windows Powe
 
    Close and reopen your terminal after installing uv.
 
-2. Install [FFmpeg](https://ffmpeg.org/download.html) by pasting the respective code below in your terminal:
-
-   - Windows:
-
-      ```powershell
-      winget install --id Gyan.FFmpeg --exact
-      ```
-
-   - macOS (with [Homebrew](https://brew.sh)):
-
-      ```sh
-      brew install ffmpeg
-      ```
-
-   *Reopen* your terminal, then check that `ffmpeg -version` works.
-
-3. Open the repository folder in your terminal (`cd "path/to/repo"`), then run:
+2. Open the repository folder in your terminal (`cd "path/to/repo"`), then run:
 
    ```sh
    uv sync --locked
@@ -63,4 +47,18 @@ The default model is `turbo`. To choose another model:
 uv run batch_transcribe.py --model small .
 ```
 
-The first run downloads the model and needs internet. Transcription runs locally and can take a while. Run `uv run batch_transcribe.py --help` for options.
+Supported audio extensions: `.aac`, `.ac3`, `.aif`, `.aifc`, `.aiff`, `.amr`,
+`.ape`, `.au`, `.caf`, `.flac`, `.m4a`, `.m4b`, `.mka`, `.mp2`, `.mp3`, `.oga`,
+`.ogg`, `.opus`, `.wav`, `.wave`, `.weba`, and `.wma`. Uppercase extensions are
+also accepted.
+
+FFmpeg is set up automatically using [static-ffmpeg](https://pypi.org/project/static-ffmpeg/),
+the same dependency used by [transcribetools](https://github.com/ndegroot/transcribetools).
+An existing FFmpeg/FFprobe installation is reused; otherwise, the binaries are
+downloaded on the first run with recordings to transcribe and reused on later runs.
+No separate FFmpeg installation or administrator access is needed. This works
+directly from the GitHub download or clone; this project does not need to be on PyPI.
+
+The first run needs internet to download FFmpeg (if needed) and the model.
+Transcription runs locally and can take a while. Run
+`uv run batch_transcribe.py --help` for options.

@@ -6,8 +6,16 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
+import static_ffmpeg
 import tqdm
 import whisper
+
+
+AUDIO_EXTENSIONS = {
+    ".aac", ".ac3", ".aif", ".aifc", ".aiff", ".amr", ".ape", ".au",
+    ".caf", ".flac", ".m4a", ".m4b", ".mka", ".mp2", ".mp3", ".oga",
+    ".ogg", ".opus", ".wav", ".wave", ".weba", ".wma",
+}
 
 
 class ProgressBar(tqdm.tqdm):
@@ -65,7 +73,7 @@ def main(argv=None):
 
     files = sorted(
         p for p in args.folder.rglob("*")
-        if p.is_file() and p.suffix.lower() == ".m4a"
+        if p.is_file() and p.suffix.lower() in AUDIO_EXTENSIONS
     )
     pending = [p for p in files if not p.with_suffix(".txt").exists()]
 
@@ -74,6 +82,12 @@ def main(argv=None):
     # Whisper imports tqdm separately for downloads and transcription.
     with patch.object(whisper, "tqdm", ProgressBar), patch.object(tqdm, "tqdm", ProgressBar):
         if pending:
+            print("Preparing FFmpeg (downloading if needed)...", flush=True)
+            try:
+                static_ffmpeg.add_paths(weak=True)
+            except Exception as e:
+                parser.exit(1, f"ERROR: Could not prepare FFmpeg: {e}\n")
+
             print(f"Loading model {args.model} (downloading if needed)...", flush=True)
             model = whisper.load_model(args.model)
 
