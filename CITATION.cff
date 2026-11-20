@@ -1,4 +1,5 @@
 cff-version: 1.2.0
+doi: 10.5281/zenodo.24399728
 message: "If you use this software, please cite it using these metadata."
 type: software
 title: "Whisper Batch Transcribe"
