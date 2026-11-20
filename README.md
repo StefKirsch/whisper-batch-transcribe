@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1426822939.svg)](https://doi.org/10.5281/zenodo.24399728)
+
 # Audio Transcription in Batch
 
 Transcribe recordings locally with Whisper. Each recording gets a `.txt` file beside it. Subfolders are included. Recordings with an existing `.txt` file are treated as already transcribed and are skipped.
