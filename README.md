@@ -64,3 +64,11 @@ directly from the GitHub download or clone; this project does not need to be on 
 The first run needs internet to download FFmpeg (if needed) and the model.
 Transcription runs locally and can take a while. Run
 `uv run batch_transcribe.py --help` for options.
+
+## Acknowledgements
+
+This project uses [OpenAI Whisper](https://github.com/openai/whisper) for local audio transcription.
+
+Whisper was developed by OpenAI and is described in:
+
+Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023). [Robust Speech Recognition via Large-Scale Weak Supervision](https://proceedings.mlr.press/v202/radford23a.html). *Proceedings of the 40th International Conference on Machine Learning*, 202, 28492–28518.
