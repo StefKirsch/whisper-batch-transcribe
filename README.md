@@ -72,3 +72,7 @@ This project uses [OpenAI Whisper](https://github.com/openai/whisper) for local 
 Whisper was developed by OpenAI and is described in:
 
 Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023). [Robust Speech Recognition via Large-Scale Weak Supervision](https://proceedings.mlr.press/v202/radford23a.html). *Proceedings of the 40th International Conference on Machine Learning*, 202, 28492–28518.
+
+## Statement on AI Use
+
+The above text and software code in this repository has been generated and/or refined using OpenAI's Codex tool. All AI-output has been verified for correctness, accuracy and completeness, adapted where needed, and approved by the author. The author takes responsibility for any mistakes and inaccuracies.
